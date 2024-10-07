@@ -1,0 +1,53 @@
+{
+    // Use IntelliSense to learn about possible attributes.
+    // Hover to view descriptions of existing attributes.
+    // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "Main with Args",
+            "type": "debugpy",
+            "request": "launch",
+            "program": "${file}",
+            "console": "integratedTerminal",
+            "args": [
+                // "--input_path=./bits2binders_scripts/input_pdbs",
+                "--input_path=./bits2binders_scripts/output_pdbs/parsed_pdbs.jsonl",
+                // "--output_path=./bits2binders_scripts/output_pdbs/parsed_pdbs.jsonl",
+                // "--output_path=./bits2binders_scripts/output_pdbs/assigned_pdbs.jsonl",
+                "--output_path=./bits2binders_scripts/output_pdbs/fixed_pdbs.jsonl",
+                "--chain_list=A",
+                // "--position_list=, 1 4 7 10 11 12 13 14 16 37 38 39 40 41 42 43 44 45 50 51 54 57 60 61 62 63 64 66 87 88 89 90 91 92 93 94 95 100 101 104"
+            ]
+        },
+        // {
+        //     "name": "ProteinMPNN Debug Hydra",
+        //     "type": "debugpy",
+        //     "request": "launch",
+        //     "program": "${file}",
+        //     "console": "integratedTerminal",
+        //     // "justMyCode": false,
+        //     // "module": "cProfile",
+        //     // "args": [
+        //     //     "-o",
+        //     //     "./profile_output.stats",
+        //     //     "${workspaceFolder}/run_proteinmpnn.py"
+        //     // ]
+        // },
+        {
+            "name": "ProteinMPNN Debug Hydra",
+            "type": "debugpy",
+            "request": "launch",
+            "program": "${workspaceFolder}/bits2binders_scripts/proteinmpnn_hydra_run.py",
+            "console": "integratedTerminal",
+            "cwd": "${workspaceFolder}/bits2binders_scripts",
+            "args": [
+                "hydra.run.dir=.",
+                "hydra.job.chdir=False"
+            ],
+            "env": {
+                "HYDRA_FULL_ERROR": "1"
+            }
+        }
+    ]
+}

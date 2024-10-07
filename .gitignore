@@ -127,3 +127,8 @@ dmypy.json
 
 # Pyre type checker
 .pyre/
+
+# bits2binders ignores
+bits2binders_scripts/input_pdbs/*
+bits2binders_scripts/output_pdbs/*
+outputs/*
