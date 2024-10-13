@@ -132,3 +132,5 @@ dmypy.json
 bits2binders_scripts/input_pdbs/*
 bits2binders_scripts/output_pdbs/*
 outputs/*
+bits2binders_scripts/outputs/*
+bits2binders_scripts/hydra_outputs/*

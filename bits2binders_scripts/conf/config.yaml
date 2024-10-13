@@ -1,7 +1,10 @@
 # conf/config.yaml
+hydra:
+  run:
+    dir: ./hydra_outputs/${now:%Y-%m-%d}/${now:%H-%M-%S}
 paths:
-  folder_with_pdbs: "./input_pdbs"
-  output_dir: "./output_pdbs"
+  folder_with_pdbs: "../../RFdiffusion/bits2binders_scripts/output_pdbs"
+  output_dir: "./outputs"
   path_to_model_weights: ""
   chain_list: "A"
 
@@ -11,11 +14,11 @@ model:
   ca_only: false
 
 run:
-  sampling_temps: [0.1, 0.2, 0.5]
-  backbone_noises: [0.01, 0.02]
-  seeds: [37, 42]
-  num_seq_per_target: 2
-  batch_size: 1
+  sampling_temps: [0.1, 0.3, 0.5]
+  backbone_noises: [0.01, 0.03, 0.05]
+  seeds: [42]
+  num_seq_per_target: 32
+  batch_size: 16
   suppress_print: false
   save_score: false
   max_length: 200000
